@@ -57,7 +57,7 @@ internal static class IEndpointRouteBuilderExtensions
             else
             {
                 logger.LogWarning("Events of type {EventType} are not supported." +
-                                  " If you wish to support them you can clone the repository or contribute a PR at https://github.com/tinglesoftware/azure-resources-cleaner",
+                                  " If you wish to support them you can clone the repository or contribute a PR at https://github.com/mburumaxwell/azure-resources-cleaner",
                                   type);
             }
 

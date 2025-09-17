@@ -235,7 +235,7 @@
         "template": {
           "containers": [
             {
-              "image": "[format('ghcr.io/tinglesoftware/azure-resources-cleaner:{0}', parameters('dockerImageTag'))]",
+              "image": "[format('ghcr.io/mburumaxwell/azure-resources-cleaner:{0}', parameters('dockerImageTag'))]",
               "name": "azure-cleaner",
               "env": [
                 {

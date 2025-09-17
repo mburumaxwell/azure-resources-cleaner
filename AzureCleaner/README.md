@@ -4,4 +4,4 @@ A convenience tool for cleaning up resources based on the terminal status of pul
 
 > Review/preview applications and resources are generally created in PR-based workflows to allow team members review/preview changes before they are merged. They can also be useful in preventing bugs such as application startup errors from being merged. This pattern is generally considered a good practice and is used widely. You should consider making use of it if you aren't already.
 
-For more read the [repo documentation](https://github.com/tinglesoftware/azure-resources-cleaner).
+For more read the [repo documentation](https://github.com/mburumaxwell/azure-resources-cleaner).

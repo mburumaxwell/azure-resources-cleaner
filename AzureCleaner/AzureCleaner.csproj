@@ -3,8 +3,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <Deterministic>true</Deterministic>
-    <Authors>Tingle Software</Authors>
-    <Company>Tingle Software</Company>
     <IsPackable>true</IsPackable> <!-- Needed when OutputType is Exe -->
     <Description>Cleanup tool for Azure resources for reviews.</Description>
     <Product>Azure resources cleaner</Product>
@@ -49,7 +47,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
-    <PackageIcon>logo.png</PackageIcon>
+    <!-- <PackageIcon>logo.png</PackageIcon> -->
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>$(PackageTags);azure;reviewapp;reviews;cleanup</PackageTags>
@@ -104,7 +102,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\logo.png" Pack="True" PackagePath="\" />
+    <!-- <None Include="..\logo.png" Pack="True" PackagePath="\" /> -->
   </ItemGroup>
 
 </Project>

@@ -36,7 +36,7 @@ public class DevOpsPurgerTests(ITestOutputHelper outputHelper)
         Assert.Equal("123456789", token);
 
         // with remote URL 2
-        Assert.True(purger.TryFindAzdoProject(projects, "https://tingle@dev.azure.com/fabrikam/DefaultCollection/_git/Fabrikam", out url, out token));
+        Assert.True(purger.TryFindAzdoProject(projects, "https://mburumaxwell@dev.azure.com/fabrikam/DefaultCollection/_git/Fabrikam", out url, out token));
         Assert.Equal("https://dev.azure.com/fabrikam/DefaultCollection", url);
         Assert.Equal("123456789", token);
     }

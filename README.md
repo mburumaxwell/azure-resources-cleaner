@@ -1,9 +1,9 @@
 # Azure Resources Cleaner
 
 [![NuGet](https://img.shields.io/nuget/v/azure-resources-cleaner.svg)](https://www.nuget.org/packages/azure-resources-cleaner/)
-[![GitHub Workflow Status](https://github.com/tinglesoftware/azure-resources-cleaner/actions/workflows/build.yml/badge.svg)](https://github.com/tinglesoftware/azure-resources-cleaner/actions/workflows/build.yml)
-[![Release](https://img.shields.io/github/release/tinglesoftware/azure-resources-cleaner.svg?style=flat-square)](https://github.com/tinglesoftware/azure-resources-cleaner/releases/latest)
-[![license](https://img.shields.io/github/license/tinglesoftware/azure-resources-cleaner.svg?style=flat-square)](LICENSE)
+[![GitHub Workflow Status](https://github.com/mburumaxwell/azure-resources-cleaner/actions/workflows/build.yml/badge.svg)](https://github.com/mburumaxwell/azure-resources-cleaner/actions/workflows/build.yml)
+[![Release](https://img.shields.io/github/release/mburumaxwell/azure-resources-cleaner.svg?style=flat-square)](https://github.com/mburumaxwell/azure-resources-cleaner/releases/latest)
+[![license](https://img.shields.io/github/license/mburumaxwell/azure-resources-cleaner.svg?style=flat-square)](LICENSE)
 
 This repository houses a convenience tool for cleaning up resources based on the terminal status of pull requests. This is particularly useful in removing the `reviewApp` resources in environments, that created automatically by Azure Pipelines. In addition, it will also clean up resources deployed to Azure.
 
@@ -98,9 +98,9 @@ jobs:
 
 ### Deployment to Azure
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftinglesoftware%2Fazure-resources-cleaner%2Fmain%2Fmain.json)
-[![Deploy to Azure US Gov](https://aka.ms/deploytoazuregovbutton)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftinglesoftware%2Fazure-resources-cleaner%2Fmain%2Fmain.json)
-[![Visualize](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/visualizebutton.svg?sanitize=true)](http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Ftinglesoftware%2Fazure-resources-cleaner%2Fmain%2Fmain.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmburumaxwell%2Fazure-resources-cleaner%2Fmain%2Fmain.json)
+[![Deploy to Azure US Gov](https://aka.ms/deploytoazuregovbutton)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmburumaxwell%2Fazure-resources-cleaner%2Fmain%2Fmain.json)
+[![Visualize](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/visualizebutton.svg?sanitize=true)](http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fmburumaxwell%2Fazure-resources-cleaner%2Fmain%2Fmain.json)
 
 The easiest means of deployment is to use the relevant button above. You can also use the [`main.json`](/main.json) or [`main.bicep`](/main.bicep) files. You will need an Azure subscription and a resource group to deploy to any of the Azure hosts.
 
@@ -162,7 +162,7 @@ This tool looks for resources or sub-resources named in a number of formats:
 - `ra-{pull-request-identifier}`
 - `ra{pull-request-identifier}`
 
-For example: `ra-2215`, `ra2215`, and `review-app-2215` will all be handled. Make sure you name your preview environments accordingly. If you wish to contribute more reasonable patterns, check [here](https://github.com/tinglesoftware/azure-resources-cleaner/blob/7e21f338f78f6af634d8aa35d39542455c55415b/Tingle.AzureCleaner/AzureCleaner.cs#L100)
+For example: `ra-2215`, `ra2215`, and `review-app-2215` will all be handled. Make sure you name your preview environments accordingly. If you wish to contribute more reasonable patterns, check [here](https://github.com/mburumaxwell/azure-resources-cleaner/blob/7e21f338f78f6af634d8aa35d39542455c55415b/Tingle.AzureCleaner/AzureCleaner.cs#L100)
 
 ### Preview environments on Azure DevOps
 

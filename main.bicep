@@ -178,7 +178,7 @@ resource app 'Microsoft.App/containerApps@2023-05-01' = {
     template: {
       containers: [
         {
-          image: 'ghcr.io/tinglesoftware/azure-resources-cleaner:${dockerImageTag}'
+          image: 'ghcr.io/mburumaxwell/azure-resources-cleaner:${dockerImageTag}'
           name: 'azure-cleaner'
           env: [
             { name: 'AZURE_CLIENT_ID', value: managedIdentity.properties.clientId } // Specifies the User-Assigned Managed Identity to use. Without this, the app attempt to use the system assigned one.
