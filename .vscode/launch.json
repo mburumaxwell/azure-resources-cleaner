@@ -8,16 +8,16 @@
       "name": "Launch (simple)",
       "type": "dotnet",
       "request": "launch",
-      "projectPath": "${workspaceFolder}/Tingle.AzureCleaner/Tingle.AzureCleaner.csproj"
+      "projectPath": "${workspaceFolder}/AzureCleaner/AzureCleaner.csproj"
     },
     {
       "name": "Launch (web)",
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "${workspaceFolder}/Tingle.AzureCleaner/bin/Debug/net9.0/Tingle.AzureCleaner.dll",
+      "program": "${workspaceFolder}/AzureCleaner/bin/Debug/net9.0/AzureCleaner.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/Tingle.AzureCleaner",
+      "cwd": "${workspaceFolder}/AzureCleaner",
       "stopAtEntry": false,
       "serverReadyAction": {
         "action": "openExternally",
@@ -36,7 +36,7 @@
       "request": "launch",
       "preLaunchTask": "docker-run: debug",
       "netCore": {
-        "appProject": "${workspaceFolder}/Tingle.AzureCleaner/Tingle.AzureCleaner.csproj"
+        "appProject": "${workspaceFolder}/AzureCleaner/AzureCleaner.csproj"
       }
     }
   ]
