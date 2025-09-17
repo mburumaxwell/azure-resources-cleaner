@@ -2,8 +2,8 @@
 
 [![NuGet](https://img.shields.io/nuget/v/azure-resources-cleaner.svg)](https://www.nuget.org/packages/azure-resources-cleaner/)
 [![GitHub Workflow Status](https://github.com/mburumaxwell/azure-resources-cleaner/actions/workflows/build.yml/badge.svg)](https://github.com/mburumaxwell/azure-resources-cleaner/actions/workflows/build.yml)
-[![Release](https://img.shields.io/github/release/mburumaxwell/azure-resources-cleaner.svg?style=flat-square)](https://github.com/mburumaxwell/azure-resources-cleaner/releases/latest)
-[![license](https://img.shields.io/github/license/mburumaxwell/azure-resources-cleaner.svg?style=flat-square)](LICENSE)
+[![Release](https://img.shields.io/github/release/mburumaxwell/azure-resources-cleaner.svg)](https://github.com/mburumaxwell/azure-resources-cleaner/releases/latest)
+[![license](https://img.shields.io/github/license/mburumaxwell/azure-resources-cleaner.svg)](LICENSE)
 
 This repository houses a convenience tool for cleaning up resources based on the terminal status of pull requests. This is particularly useful in removing the `reviewApp` resources in environments, that created automatically by Azure Pipelines. In addition, it will also clean up resources deployed to Azure.
 
