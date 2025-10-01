@@ -288,6 +288,8 @@ jobs:
     name: Publish (Nuget.org)
     needs: Build
     if: ${{ github.actor != 'dependabot[bot]' && startsWith(github.ref, 'refs/tags') }}
+    permissions:
+      id-token: write  # enable GitHub OIDC token issuance for this job
 
     steps:
     - uses: actions/download-artifact@v5
@@ -295,17 +297,23 @@ jobs:
         name: drop
         path: ${{ github.workspace }}/drop
 
+    - name: NuGet login (OIDC → temp API key)
+      uses: NuGet/login@v1
+      id: login
+      with:
+        user: ${{ github.repository_owner }}
+
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v5
       with:
         dotnet-version: 9.x
         source-url: https://api.nuget.org/v3/index.json
       env:
-        NUGET_AUTH_TOKEN: ${{ secrets.NUGET_API_KEY }}
+        NUGET_AUTH_TOKEN: ${{ steps.login.outputs.NUGET_API_KEY }}
 
     - name: Publish to NuGet.org
       if: startsWith(github.ref, 'refs/tags/')
       run: >
         dotnet nuget push "${{ github.workspace }}/drop/*"
-        -k ${{ secrets.NUGET_API_KEY }}
+        --api-key ${{ steps.login.outputs.NUGET_API_KEY }}
         --skip-duplicate
