@@ -114,7 +114,7 @@ jobs:
           az bicep build --file main.bicep --outfile ${{ github.workspace }}/drop/main.json
 
     - name: Upload Artifact (drop)
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         path: ${{ github.workspace }}/drop/*
         name: drop
@@ -136,7 +136,7 @@ jobs:
         CLEANER_PROJECT_TOKEN: ${{ secrets.CLEANER_PROJECT_TOKEN }}
 
     - name: Upload Artifact (deploy)
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         path: deploy
         name: deploy
