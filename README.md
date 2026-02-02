@@ -81,7 +81,7 @@ jobs:
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '9.x'
+        dotnet-version: '10.x'
 
     - name: Azure Login
       uses: azure/login@v2
