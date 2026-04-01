@@ -105,7 +105,7 @@ jobs:
         files: '["${{ github.workspace }}/main.bicep"]'
 
     - name: Build bicep file
-      uses: azure/cli@v2
+      uses: azure/cli@v3
       with:
         inlineScript: |
           tdnf install -y icu
