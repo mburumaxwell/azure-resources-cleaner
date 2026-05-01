@@ -90,47 +90,44 @@ else
         tokenOption,
         dryRunOption,
     };
-    root.Action = System.CommandLine.NamingConventionBinder.CommandHandler.Create(
-        async (ParseResult parseResult, CancellationToken cancellationToken) =>
+    root.SetAction(async (parseResult, cancellationToken) =>
+    {
+        using var scope = host.Services.CreateScope();
+        var provider = scope.ServiceProvider;
+
+        var pullRequestId = parseResult.GetValue(pullRequestIdOption);
+        var subscriptions = parseResult.GetValue(subscriptionsOption);
+        var url = parseResult.GetValue(urlOption);
+        var token = parseResult.GetValue(tokenOption);
+        var dryRun = parseResult.GetValue(dryRunOption);
+
+        // prepare projects
+        var projects = new Dictionary<string, string>();
+        if (!string.IsNullOrWhiteSpace(url))
         {
-            using var scope = host.Services.CreateScope();
-            var provider = scope.ServiceProvider;
-
-            var pullRequestId = parseResult.GetValue(pullRequestIdOption);
-            var subscriptions = parseResult.GetValue(subscriptionsOption);
-            var url = parseResult.GetValue(urlOption);
-            var token = parseResult.GetValue(tokenOption);
-            var dryRun = parseResult.GetValue(dryRunOption);
-
-            // prepare projects
-            var projects = new Dictionary<string, string>();
-            if (!string.IsNullOrWhiteSpace(url))
+            if (string.IsNullOrWhiteSpace(token))
             {
-                if (string.IsNullOrWhiteSpace(token))
-                {
-                    var logger = provider.GetRequiredService<ILoggerFactory>().CreateLogger(nameof(AzureCleaner));
-                    logger.LogError("When then url is supplied the token must also be provided");
-                    return -1;
-                }
-                projects[url] = token;
+                var logger = provider.GetRequiredService<ILoggerFactory>().CreateLogger(nameof(AzureCleaner));
+                logger.LogError("When then url is supplied the token must also be provided");
+                return -1;
             }
+            projects[url] = token;
+        }
 
-            var cleaner = provider.GetRequiredService<AzureResourceCleaner>();
-            await cleaner.HandleAsync(ids: [pullRequestId],
-                                      subscriptions: subscriptions,
-                                      projects: projects,
-                                      url: url,
-                                      dryRun: dryRun,
-                                      cancellationToken: cancellationToken);
-            return 0;
-        });
-
-    var configuration = new CommandLineConfiguration(root);
+        var cleaner = provider.GetRequiredService<AzureResourceCleaner>();
+        await cleaner.HandleAsync(ids: [pullRequestId],
+                                    subscriptions: subscriptions,
+                                    projects: projects,
+                                    url: url,
+                                    dryRun: dryRun,
+                                    cancellationToken: cancellationToken);
+        return 0;
+    });
 
     // execute the command
     try
     {
-        return await configuration.InvokeAsync(args);
+        return await root.Parse(args).InvokeAsync();
     }
     finally
     {
