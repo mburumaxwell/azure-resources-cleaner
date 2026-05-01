@@ -78,7 +78,7 @@
     <PackageReference Include="Microsoft.TeamFoundationServer.Client" Version="19.225.2" />
     <PackageReference Include="Microsoft.TeamFoundation.DistributedTask.WebApi" Version="19.225.1" />
     <PackageReference Include="MiniValidation" Version="0.9.2" />
-    <PackageReference Include="System.CommandLine.NamingConventionBinder" Version="2.0.0-beta5.25230.108" />
+    <PackageReference Include="System.CommandLine.NamingConventionBinder" Version="2.0.0-beta6.25319.1" />
     <PackageReference Include="Tingle.EventBus.Transports.Azure.QueueStorage" Version="0.27.0" />
     <PackageReference Include="Tingle.EventBus.Transports.Azure.ServiceBus" Version="0.27.0" />
     <PackageReference Include="Tingle.EventBus.Transports.InMemory" Version="0.27.0" />
