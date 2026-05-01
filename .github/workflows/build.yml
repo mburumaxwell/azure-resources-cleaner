@@ -154,7 +154,7 @@ jobs:
     # Different tags are pushed depending on the current ref.
     - name: Compute Docker tags
       id: docker-tags-generator
-      uses: actions/github-script@v8
+      uses: actions/github-script@v9
       with:
         script: |
           const { ref } = context;
