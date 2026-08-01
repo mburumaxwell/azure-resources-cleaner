@@ -58,7 +58,7 @@ jobs:
         fetch-depth: 0 # Required for GitVersion
 
     - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v5
+      uses: actions/setup-dotnet@v6
 
     - name: Install GitVersion
       uses: gittools/actions/gitversion/setup@v4
@@ -271,7 +271,7 @@ jobs:
         path: ${{ github.workspace }}/drop
 
     - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v5
+      uses: actions/setup-dotnet@v6
       with:
         dotnet-version: '10.x'
         source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
@@ -303,7 +303,7 @@ jobs:
         user: ${{ github.repository_owner }}
 
     - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v5
+      uses: actions/setup-dotnet@v6
       with:
         dotnet-version: 10.x
         source-url: https://api.nuget.org/v3/index.json
